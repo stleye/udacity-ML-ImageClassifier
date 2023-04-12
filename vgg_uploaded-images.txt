@@ -1,0 +1,74 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = vgg 
+ dogfile = dognames.txt
+
+Printing all key-value pairs in dictionary results_dic:
+Filename= Monalisa_01.jpg    Pet Label= monalisa
+Filename= Doberman_01.jpg    Pet Label= doberman
+Filename= Doberman_02.jpg    Pet Label= doberman
+Filename= Brown_Bear_01.jpg    Pet Label= brown bear
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:                Monalisa_01.jpg  label:                   monalisa
+ 2 key:                Doberman_01.jpg  label:                   doberman
+ 3 key:                Doberman_02.jpg  label:                   doberman
+ 4 key:              Brown_Bear_01.jpg  label:                 brown bear
+
+     MATCH:
+
+               Doberman_01.jpg: 
+Real:                   doberman   Classifier:    Doberman, Doberman pinscher
+
+               Doberman_02.jpg: 
+Real:                   doberman   Classifier:    Doberman, Doberman pinscher
+
+             Brown_Bear_01.jpg: 
+Real:                 brown bear   Classifier: brown bear, bruin, Ursus arctos
+
+ NOT A MATCH:
+
+               Monalisa_01.jpg: 
+Real:                   monalisa   Classifier: book jacket, dust cover, dust jacket, dust wrapper
+
+# Total Images 4 # Matches: 3 # NOT Matches: 1
+
+     MATCH:
+
+               Doberman_01.jpg: 
+Real:                   doberman   Classifier:    Doberman, Doberman pinscher  
+PetLabelDog: 1  ClassLabelDog: 1
+
+               Doberman_02.jpg: 
+Real:                   doberman   Classifier:    Doberman, Doberman pinscher  
+PetLabelDog: 1  ClassLabelDog: 1
+
+             Brown_Bear_01.jpg: 
+Real:                 brown bear   Classifier: brown bear, bruin, Ursus arctos  
+PetLabelDog: 0  ClassLabelDog: 0
+
+ NOT A MATCH:
+
+               Monalisa_01.jpg: 
+Real:                   monalisa   Classifier: book jacket, dust cover, dust jacket, dust wrapper  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 4 # Matches: 3 # NOT Matches: 1
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed: 100.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed: 100.0
+CNN Model - vgg
+Number of images - 4
+Number of Dog Images - 2
+Number of Not-a Dog Images - 2
+% Correct Dogs 100.0
+% Correct Breed 100.0
+% Correct "Not-a" Dog 100.0
+
+** Total Elapsed Runtime: 0:0:0
