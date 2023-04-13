@@ -39,15 +39,8 @@ def get_pet_labels(image_dir):
     """
     results_dic = dict()
     filenames = filter(lambda x: not x.startswith('.'), listdir(image_dir))
-    pet_labels = format_dogs_filenames(filenames)
-
-    for idx in range(0, len(filenames), 1):
-        if filenames[idx] not in results_dic:
-            results_dic[filenames[idx]] = [pet_labels[idx]]
-        else:
-            print("** Warning: Key=", filenames[idx],
-                  "already exists in results_dic with value =",
-                  results_dic[filenames[idx]])
+    for filename in filenames:
+        results_dic[filename] = [format_filename(filename)]
 
     # Iterating through a dictionary printing all keys & their associated values
     print("\nPrinting all key-value pairs in dictionary results_dic:")
@@ -57,23 +50,14 @@ def get_pet_labels(image_dir):
     return results_dic
 
 
-def format_dogs_filenames(filenames):
-    result = []
-    for filename in filenames:
-        pet_image = filename
-        low_pet_image = pet_image.lower()
-        word_list_pet_image = low_pet_image.split("_")
-        pet_name = ""
+def format_filename(filename):
+    pet_image = filename
+    low_pet_image = pet_image.lower()
+    word_list_pet_image = low_pet_image.split("_")
+    pet_name = ""
 
-        # Loops to check if word in pet name is only
-        # alphabetic characters - if true append word
-        # to pet_name separated by trailing space
-        for word in word_list_pet_image:
-            if word.isalpha():
-                pet_name += word + " "
+    for word in word_list_pet_image:
+        if word.isalpha():
+            pet_name += word + " "
 
-        # Strip off starting/trailing whitespace characters
-        pet_name = pet_name.strip()
-        result.append(pet_name)
-
-    return result
+    return pet_name.strip()
