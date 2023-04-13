@@ -80,17 +80,17 @@ def print_results(results_dic, results_stats_dic, model,
 
     if print_incorrect_dogs:
         if n_correct_dogs + n_correct_notdogs != n_images:
-            n_missclassified_dogs = 0
+            missclassified_dogs = []
             for key, value in results_dic.items():
                 if sum(results_dic[key][3:]) == 1:
-                    n_missclassified_dogs += 1
-            print('Number of missclassified dogs - {}'.format(n_missclassified_dogs))
+                    missclassified_dogs.append(results_dic[key][1])
+            print('Missclassified dogs - {}'.format(missclassified_dogs))
 
     if print_incorrect_breed:
         if n_correct_dogs != n_correct_breed:
-            n_missclassified_breed = 0
+            missclassified_breed = []
             for key, value in results_dic.items():
                 if sum(results_dic[key][3:]) == 2 and results_dic[key][2] == 0:
-                    n_missclassified_breed += 1
-            print('Number of missclassified breed {}'.format(
-                n_missclassified_breed))
+                    missclassified_breed.append(results_dic[key][1])
+            print('Missclassified breed {}'.format(
+                missclassified_breed))
