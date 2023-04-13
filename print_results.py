@@ -83,14 +83,14 @@ def print_results(results_dic, results_stats_dic, model,
             missclassified_dogs = []
             for key, value in results_dic.items():
                 if sum(results_dic[key][3:]) == 1:
-                    missclassified_dogs.append(results_dic[key][1])
-            print('Missclassified dogs - {}'.format(missclassified_dogs))
+                    missclassified_dogs.append(results_dic[key][0])
+            print('Missclassified dogs - {}'.format(set(missclassified_dogs)))
 
     if print_incorrect_breed:
         if n_correct_dogs != n_correct_breed:
             missclassified_breed = []
             for key, value in results_dic.items():
                 if sum(results_dic[key][3:]) == 2 and results_dic[key][2] == 0:
-                    missclassified_breed.append(results_dic[key][1])
+                    missclassified_breed.append(results_dic[key][0])
             print('Missclassified breed {}'.format(
-                missclassified_breed))
+                set(missclassified_breed)))
